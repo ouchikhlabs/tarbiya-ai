@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>هندسة تكوين وحدة ديداكتيك التربية الإسلامية بتوظيف تقنيات الذكاء الاصطناعي</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --deep:#0d3b36; --teal:#176b63; --teal2:#2f8a80; --soft:#e7f2ef; --line:#d5e4e0;
+  --gold:#c9a24a; --gold-soft:#f7efd9; --ink:#1b2b29; --muted:#5b6d6a; --bg:#f7f9f8; --white:#fff;
+  --r:18px; --shadow:0 6px 24px rgba(13,59,54,.08);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Tajawal","Segoe UI",Tahoma,sans-serif;font-size:18px;line-height:1.8}
+h1,h2,h3{font-family:"Amiri","Tajawal",serif;line-height:1.35;margin:0}
+a{color:inherit}
+.wrap{max-width:1180px;margin:auto;padding:0 22px}
+
+/* nav */
+nav.top{position:sticky;top:0;z-index:40;background:rgba(13,59,54,.96);backdrop-filter:blur(6px);color:#fff}
+nav.top .wrap{display:flex;align-items:center;gap:18px;height:62px}
+nav.top .logo{font-weight:800;font-size:16px;white-space:nowrap}
+nav.top .logo span{color:var(--gold)}
+nav.top ul{display:flex;gap:4px;list-style:none;margin:0 auto 0 0;padding:0;overflow-x:auto}
+nav.top ul a{display:block;padding:6px 12px;border-radius:999px;text-decoration:none;font-size:15px;opacity:.85;white-space:nowrap}
+nav.top ul a:hover{background:rgba(255,255,255,.12);opacity:1}
+.btn{display:inline-flex;align-items:center;gap:8px;border:0;border-radius:12px;padding:11px 20px;font:inherit;font-weight:700;cursor:pointer;text-decoration:none}
+.btn.gold{background:var(--gold);color:#2a1f05}
+.btn.light{background:#fff;color:var(--deep)}
+.btn.line{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.5)}
+.btn.teal{background:var(--teal);color:#fff}
+
+/* hero */
+header.hero{background:radial-gradient(1200px 500px at 85% -10%,#2a8a7f 0%,transparent 60%),linear-gradient(160deg,var(--deep),#0f4a43 60%,#13564e);color:#fff;position:relative;overflow:hidden}
+header.hero::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(201,162,74,.18) 1.5px,transparent 1.5px);background-size:26px 26px;mask-image:linear-gradient(to left,#000,transparent 70%);pointer-events:none}
+.hero .wrap{position:relative;z-index:1;padding:78px 22px 70px}
+.kicker{display:inline-block;background:rgba(201,162,74,.18);color:#f0d897;border:1px solid rgba(201,162,74,.45);padding:4px 14px;border-radius:999px;font-size:15px;margin-bottom:18px}
+.hero h1{font-size:clamp(30px,4.6vw,54px);max-width:900px}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero p.lead{font-size:clamp(17px,2vw,21px);opacity:.9;max-width:760px;margin:18px 0 28px}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:46px}
+.stat{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:16px 18px}
+.stat b{display:block;font-size:34px;color:var(--gold);font-family:"Tajawal";line-height:1.2}
+.stat span{font-size:15px;opacity:.85}
+
+/* sections */
+section.sec{padding:76px 0;border-bottom:1px solid var(--line)}
+section.sec:nth-of-type(even){background:#fff}
+.sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:28px;flex-wrap:wrap}
+.sec-num{font-family:"Tajawal";font-weight:800;color:var(--gold);font-size:18px;letter-spacing:.5px}
+.sec-head h2{font-size:clamp(26px,3.4vw,38px);color:var(--deep)}
+.sec-head p{width:100%;margin:6px 0 0;color:var(--muted);font-size:18px}
+.grid{display:grid;gap:18px}
+.g2{grid-template-columns:repeat(2,1fr)} .g3{grid-template-columns:repeat(3,1fr)} .g4{grid-template-columns:repeat(4,1fr)}
+.card{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:22px 24px;box-shadow:var(--shadow)}
+section.sec:nth-of-type(even) .card{background:var(--bg)}
+.card h3{font-size:22px;color:var(--teal);margin-bottom:8px}
+.card p{margin:0;color:#33433f}
+.ic{width:46px;height:46px;border-radius:12px;background:var(--soft);display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:12px}
+
+/* time chart */
+.timebar{display:flex;height:64px;border-radius:14px;overflow:hidden;margin:10px 0 16px;box-shadow:var(--shadow)}
+.timebar div{display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:17px;white-space:nowrap}
+.tb1{background:var(--teal2);width:18%} .tb2{background:var(--deep);width:70%} .tb3{background:var(--gold);color:#2a1f05!important;width:12%}
+.legend{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.legend .card b{font-size:30px;color:var(--deep);font-family:"Tajawal"}
+.eval{display:flex;gap:14px;margin-top:18px}
+.eval .pill{flex:1;border-radius:14px;padding:16px 18px;color:#fff}
+.eval .p25{background:var(--teal2);flex:25} .eval .p75{background:var(--deep);flex:75}
+.eval b{font-size:28px;display:block}
+
+/* principles */
+.rule{border-inline-start:5px solid var(--gold)}
+
+/* AI map */
+.map{position:relative;display:grid;gap:16px}
+.stage{display:grid;grid-template-columns:150px 1fr;gap:18px;align-items:stretch}
+.stage .when{background:var(--deep);color:#fff;border-radius:16px;padding:16px;display:flex;flex-direction:column;justify-content:center;text-align:center}
+.stage .when b{font-size:20px;color:var(--gold)}
+.stage .when small{opacity:.85}
+.stage .card{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.tag{display:inline-block;background:var(--gold-soft);color:#7a5a12;border-radius:8px;padding:2px 10px;font-size:14px;font-weight:700;margin-bottom:6px}
+.lbl{font-size:14px;font-weight:800;color:var(--muted);margin-bottom:2px}
+
+/* demos */
+.demo{border-radius:var(--r);overflow:hidden;border:1px solid var(--line);background:#fff;box-shadow:var(--shadow)}
+.demo .bar{background:var(--deep);color:#fff;padding:10px 16px;font-weight:700;display:flex;justify-content:space-between;align-items:center;font-size:16px}
+.demo .bar small{background:var(--gold);color:#2a1f05;border-radius:6px;padding:0 8px;font-size:13px}
+.demo .body{padding:18px}
+.filt{display:grid;grid-template-columns:1fr auto;gap:8px 12px;align-items:center;margin-bottom:10px}
+.meter{height:10px;background:#e6eeec;border-radius:99px;overflow:hidden;grid-column:1/3}
+.meter i{display:block;height:100%;border-radius:99px;background:var(--teal2);width:0;transition:width 1.2s ease}
+.score{font-weight:800;color:var(--teal)}
+.fb{background:var(--gold-soft);border-radius:10px;padding:10px 14px;font-size:16px;margin-top:6px}
+.chat{display:flex;flex-direction:column;gap:10px}
+.msg{max-width:88%;padding:10px 14px;border-radius:14px;font-size:16px}
+.msg.st{background:#eef3f7;align-self:flex-start}
+.msg.st b{color:#3a5a78}
+.msg.me{background:var(--soft);align-self:flex-end}
+.msg.me b{color:var(--teal)}
+.choices{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.choices button{border:1.5px solid var(--teal2);background:#fff;color:var(--teal);border-radius:10px;padding:6px 12px;font:inherit;font-size:15px;cursor:pointer}
+.choices button.ok{background:var(--teal);color:#fff}
+.choices button.no{border-color:#c46a55;color:#a2402c}
+.loop{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:24px}
+.loop .step{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 18px;font-weight:700;text-align:center;min-width:170px;box-shadow:var(--shadow)}
+.loop .step small{display:block;font-weight:400;color:var(--muted);font-size:14px}
+.loop .arr{color:var(--gold);font-size:26px}
+.loop .step.human{background:var(--deep);color:#fff}
+.loop .step.human small{color:#cfe3df}
+
+/* model session */
+.model{display:grid;grid-template-columns:1.15fr 1fr;gap:28px;align-items:center}
+.model .shot{position:relative;border-radius:var(--r);overflow:hidden;box-shadow:0 14px 40px rgba(13,59,54,.25)}
+.model .shot img{display:block;width:100%}
+.model .shot .badge{position:absolute;top:14px;right:14px;background:var(--gold);color:#2a1f05;font-weight:800;padding:4px 12px;border-radius:8px;font-size:15px}
+.steps4{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:16px 0 20px}
+.steps4 div{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:16px}
+.steps4 b{color:var(--teal)}
+.minis{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:14px}
+.minis img{width:100%;border-radius:12px;display:block;border:1px solid var(--line)}
+
+/* value */
+.big{font-family:"Tajawal";font-size:44px;font-weight:800;color:var(--teal);line-height:1}
+.vs{display:flex;align-items:center;gap:14px;margin:6px 0 10px}
+.vs s{color:#a2402c;font-size:22px}
+footer{background:var(--deep);color:#cfe3df;padding:34px 0;font-size:15px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.note{font-size:14px;color:var(--muted);margin-top:10px}
+
+/* presentation mode */
+.pbar{display:none}
+body.present nav.top, body.present footer{display:none}
+body.present{overflow:hidden;background:var(--deep)}
+body.present .slide{display:none;position:fixed;inset:0;overflow:auto;padding:46px 0 80px;border:0}
+body.present .slide.on{display:block;animation:fade .45s ease}
+body.present section.sec{background:var(--bg)}
+body.present section.sec:nth-of-type(even){background:#fff}
+@keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+body.present .pbar{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:90;background:rgba(13,59,54,.97);color:#fff;align-items:center;gap:14px;padding:10px 20px}
+.pbar .dots{display:flex;gap:6px;flex:1;justify-content:center}
+.pbar .dots i{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.3);cursor:pointer}
+.pbar .dots i.on{background:var(--gold)}
+.pbar button{background:rgba(255,255,255,.12);color:#fff;border:0;border-radius:10px;padding:6px 14px;font:inherit;cursor:pointer}
+.pbar .timer{font-weight:800;font-variant-numeric:tabular-nums;direction:ltr;background:rgba(0,0,0,.25);padding:4px 12px;border-radius:8px;min-width:72px;text-align:center}
+.pbar .timer.warn{background:#b3412f}
+
+body.present{font-size:16px;line-height:1.65}
+body.present .slide{padding:26px 0 70px}
+body.present .sec-head{margin-bottom:16px}
+body.present .card{padding:14px 18px}
+body.present .card h3{font-size:19px;margin-bottom:4px}
+body.present .ic{width:36px;height:36px;font-size:19px;margin-bottom:6px}
+body.present .timebar{height:48px;margin:6px 0 10px}
+body.present .legend .card b{font-size:24px}
+body.present .grid{gap:12px}
+body.present .map{gap:10px}
+body.present .stage .when b{font-size:17px}
+body.present .eval b{font-size:22px}
+body.present .eval .pill{padding:10px 14px}
+body.present .loop{margin-top:14px}
+body.present .hero .wrap{padding:60px 22px 40px}
+@media (max-width:900px){
+  .g3,.g4,.stats,.legend{grid-template-columns:repeat(2,1fr)}
+  .g2,.model,.stage,.stage .card{grid-template-columns:1fr}
+  nav.top ul{display:none}
+}
+@media (max-width:560px){.g3,.g4,.stats,.legend,.steps4,.minis{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav class="top"><div class="wrap">
+  <div class="logo">ديداكتيك التربية الإسلامية <span>× الذكاء الاصطناعي</span></div>
+  <ul>
+    <li><a href="#tatir">التأطير</a></li>
+    <li><a href="#dawabit">الضوابط</a></li>
+    <li><a href="#mahattat">المحطات</a></li>
+    <li><a href="#adawat">الأدوات</a></li>
+    <li><a href="#namudhaj">نموذج تطبيقي</a></li>
+    <li><a href="#qima">القيمة المضافة</a></li>
+  </ul>
+  <button class="btn gold" id="startPres" style="padding:7px 14px;font-size:15px">▶ وضع العرض</button>
+</div></nav>
+
+<!-- 0 HERO -->
+<header class="hero slide" id="top">
+  <div class="wrap">
+    <span class="kicker">توصيف مشروع · حقيبة تكوينية رقمية تفاعلية</span>
+    <h1>هندسة تكوين وحدة <em>ديداكتيك التربية الإسلامية</em> بتوظيف تقنيات الذكاء الاصطناعي</h1>
+    <p class="lead">نموذج رقمي تفاعلي قابل للتطوير والتعميم، يُدمج أدوات الذكاء الاصطناعي في محطات تكوينية مفصلية، دون أن يكون منصة بديلة أو بديلاً عن التكوين الحضوري.</p>
+    <div class="cta">
+      <a class="btn gold" href="#mahattat">أين يندرج الذكاء الاصطناعي؟</a>
+      <a class="btn line" href="#namudhaj">النموذج التطبيقي</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>34</b><span>ساعة: الغلاف الزمني الرسمي للوحدة</span></div>
+      <div class="stat"><b>24</b><span>ساعة أنشطة تطبيقية (70%)</span></div>
+      <div class="stat"><b>4</b><span>أدوات ذكية في محطات مفصلية</span></div>
+      <div class="stat"><b>25/75</b><span>مراقبة مستمرة / وضعية مركبة</span></div>
+    </div>
+  </div>
+</header>
+
+<!-- 1 TATIR -->
+<section class="sec slide" id="tatir"><div class="wrap">
+  <div class="sec-head"><span class="sec-num">01</span><h2>التأطير الرسمي والمرجعي</h2></div>
+  <div class="grid g2">
+    <div class="card"><div class="ic">🧭</div><h3>طبيعة المشروع</h3><p>هندسة ديدكتيكية وحقيبة تكوينية رقمية تفاعلية تُدمج أدوات الذكاء الاصطناعي في محطات تكوينية مفصلية، وليست منصة بديلة أو بديلاً عن التكوين الحضوري.</p></div>
+    <div class="card"><div class="ic">📜</div><h3>المرجعية الملزمة</h3><p>المقرر الوزاري رقم 24-053 (22 يونيو 2024) ومنهاج مادة التربية الإسلامية (يونيو 2016)، في إطار الثوابت الدينية والوطنية للمملكة: العقيدة الأشعرية، والمذهب المالكي، والتصوف السني، وإمارة المؤمنين.</p></div>
+  </div>
+  <h3 style="margin:34px 0 4px;font-size:24px;color:var(--deep)">الغلاف الزمني الرسمي: 34 ساعة دون زيادة أو نقصان</h3>
+  <div class="timebar"><div class="tb1">6 س · 18%</div><div class="tb2">24 ساعة أنشطة تطبيقية · 70%</div><div class="tb3">4 س · 12%</div></div>
+  <div class="legend">
+    <div class="card"><b>6</b> ساعات<br><span style="color:var(--muted)">دروس</span></div>
+    <div class="card"><b>24</b> ساعة<br><span style="color:var(--muted)">أنشطة تطبيقية</span></div>
+    <div class="card"><b>4</b> ساعات<br><span style="color:var(--muted)">تقويم</span></div>
+  </div>
+  <div class="grid g2" style="margin-top:22px">
+    <div class="card"><h3>صيغ التنفيذ</h3><p>التكوين الحضوري وفق باراديغم <b>(عملي – نظري – عملي)</b>، والفصل المعكوس الذكي.</p></div>
+    <div class="card"><h3>صيغ التقويم</h3>
+      <div class="eval"><div class="pill p25"><b>25%</b>مراقبة مستمرة</div><div class="pill p75"><b>75%</b>اختبار نهاية الوحدة (وضعية مركبة)</div></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- 2 DAWABIT -->
+<section class="sec slide" id="dawabit"><div class="wrap">
+  <div class="sec-head"><span class="sec-num">02</span><h2>الضوابط والاحترازات الشرعية والبيداغوجية</h2></div>
+  <div class="grid g2">
+    <div class="card rule"><div class="ic">⚖️</div><h3>التمييز بين المعرفة الشرعية والمعالجة الديدكتيكية</h3><p>لا يُستعمل الذكاء الاصطناعي مصدراً للفتوى أو التفسير؛ تقتصر وظيفته على الهندسة الديدكتيكية (بناء الوضعيات، تحليل التمثلات، شبكات التقويم)، وتبقى المرجعية الشرعية محكومة بالنصوص المعتمدة في المنهاج والمذهب المالكي.</p></div>
+    <div class="card rule"><div class="ic">🕌</div><h3>صون قدسية المادة في التوليد البصري</h3><p>يُمنع منعاً كلياً تجسيد الذات الإلهية أو الأنبياء والرسل أو الصحابة أو الغيبيات، ويُقتصر على السند البصري الرمزي والواقعي المرتبط بمحيط المتعلم المراهق.</p></div>
+    <div class="card rule"><div class="ic">🧑‍🏫</div><h3>المركزية البشرية (Human-in-the-Loop)</h3><p>كل مخرج يقترحه الذكاء الاصطناعي مسودة أولية تخضع وجوباً للمراجعة العلمية والشرعية للأستاذ المكوّن قبل اعتمادها.</p></div>
+    <div class="card rule"><div class="ic">⏳</div><h3>الحفاظ على قدسية الزمن الحضوري</h3><p>الذكاء الاصطناعي لا يعوّض التفاعل الإنساني والقدوة داخل القاعة؛ يُستثمر قبل الحصة وأثناء الورشات لتفريغ الزمن الحضوري للنقاش العميق والممارسة المهنية.</p></div>
+  </div>
+  <div class="loop">
+    <div class="step">الذكاء الاصطناعي<small>يقترح مسودة</small></div><span class="arr">←</span>
+    <div class="step human">الأستاذ المكوّن<small>مراجعة علمية وشرعية</small></div><span class="arr">←</span>
+    <div class="step">اعتماد<small>ثم توظيف في التكوين</small></div>
+  </div>
+</div></section>
+
+<!-- 3 MAHATTAT -->
+<section class="sec slide" id="mahattat"><div class="wrap">
+  <div class="sec-head"><span class="sec-num">03</span><h2>أين تندرج تقنيات الذكاء الاصطناعي بالضبط داخل الوحدة؟</h2></div>
+  <div class="map">
+    <div class="stage">
+      <div class="when"><b>المحطات 1 و2 و3</b><small>قبل الحصة · الفصل المعكوس الذكي</small></div>
+      <div class="card">
+        <div><div class="lbl">التقنية</div><span class="tag">Flipped Forms</span><p>استمارات تشخيصية رقمية مدعومة بالتحليل اللغوي، وكبسولات فيديو قصيرة.</p></div>
+        <div><div class="lbl">الوظيفة</div><p>فرز إجابات الطلبة الأساتذة قبل الحصة لتحديد نسب الخلط المفاهيمي، وتوجيه الساعات الست النظرية نحو المعالجة البؤرية.</p></div>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="when"><b>المحطة 4</b><small>الوضعيات الديدكتيكية · 4 ساعات تطبيقية</small></div>
+      <div class="card">
+        <div><div class="lbl">التقنية</div><span class="tag">Intelligent Didactic Filter</span><p>«المصفى الديدكتيكي الذكي» المضبوط بمعايير (Rubrics).</p></div>
+        <div><div class="lbl">الوظيفة</div><p>فحص مسودات الوضعيات المشكلة والبنائية في 30 ثانية عبر 4 مرشحات، وتقديم تغذية راجعة دقيقة.</p></div>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="when"><b>المحطتان 3 و6</b><small>التمثلات وتحليل الوضعيات · 8 ساعات</small></div>
+      <div class="card">
+        <div><div class="lbl">التقنية</div><span class="tag">Role-Play Simulator</span><p>«محاكي المواقف الصفية والتمثلات».</p></div>
+        <div><div class="lbl">الوظيفة</div><p>تقمّص دور متعلمين مراهقين يطرحون تمثلات خاطئة أو عوائق عقدية/فقهية، لتدريب الطالب الأستاذ على تشخيص العائق واتخاذ قرار ديدكتيكي معلل.</p></div>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="when"><b>المحطتان 7 و8</b><small>التكنولوجيا والتقويم · 8 ساعات</small></div>
+      <div class="card">
+        <div><div class="lbl">التقنية</div><span class="tag">أدوات التقويم</span><p>أدوات تصميم الروائز وشبكات التقويم التبادلي وأنشطة التمايز.</p></div>
+        <div><div class="lbl">الوظيفة</div><p>التدرب على الاستعمال المسؤول والأخلاقي للتكنولوجيا في المادة، وبناء شبكات تقويم معيارية (25% مراقبة مستمرة / 75% وضعية مركبة).</p></div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<!-- 4 ADAWAT demos -->
+<section class="sec slide" id="adawat"><div class="wrap">
+  <div class="sec-head"><span class="sec-num">04</span><h2>الأدوات الذكية في العمل</h2><p>نماذج توضيحية لطريقة اشتغال الأداتين المحوريتين. المخرجات المعروضة أمثلة تخضع لمراجعة الأستاذ المكوّن.</p></div>
+  <div class="grid g2">
+    <div class="demo">
+      <div class="bar">🔎 المصفى الديدكتيكي الذكي <small>مثال توضيحي</small></div>
+      <div class="body">
+        <p style="margin:0 0 12px;font-size:16px;color:var(--muted)">مسودة وضعية مشكلة يقترحها طالب أستاذ، تُفحص عبر 4 مرشحات:</p>
+        <div class="filt"><span>الملاءمة المنهاجية والقيمية</span><span class="score" data-v="90">0%</span><div class="meter"><i></i></div></div>
+        <div class="filt"><span>سلامة النقل الديدكتيكي</span><span class="score" data-v="75">0%</span><div class="meter"><i></i></div></div>
+        <div class="filt"><span>البنية الإشكالية</span><span class="score" data-v="55">0%</span><div class="meter"><i></i></div></div>
+        <div class="filt"><span>تدرّج المهام</span><span class="score" data-v="70">0%</span><div class="meter"><i></i></div></div>
+        <div class="fb"><b>تغذية راجعة:</b> الإشكال المطروح مغلق يُجاب عنه بنعم أو لا؛ يُقترح إعادة صياغته في صورة مفارقة تستدعي التحليل والتعليل.</div>
+        <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap"><button class="btn teal" id="runFilter" style="padding:7px 14px;font-size:15px">▶ تشغيل الفحص</button><span class="note" style="margin:0;align-self:center">⏱ الفحص التقني الأولي في ثوانٍ</span></div>
+      </div>
+    </div>
+    <div class="demo">
+      <div class="bar">🎭 محاكي المواقف الصفية والتمثلات <small>مثال توضيحي</small></div>
+      <div class="body chat">
+        <div class="msg st"><b>متعلم (16 سنة):</b> أستاذ، إذا كان الإسلام يقرّ الحرية، فلماذا تُفرض الزكاة على مالي؟</div>
+        <div class="msg me"><b>الطالب الأستاذ يشخّص العائق:</b> ما طبيعة هذا التمثل؟</div>
+        <div class="choices" id="diag">
+          <button data-ok="1">تعارض متوهَّم بين قيمتين</button>
+          <button>رفض لحكم شرعي</button>
+          <button>نقص في المعلومات فقط</button>
+        </div>
+        <div class="fb" id="diagFb" style="display:none"></div>
+        <p class="note" style="margin-top:4px">يدرّب المحاكي على التشخيص واتخاذ القرار الديدكتيكي المعلل، ولا يقدّم فتوى أو تفسيراً.</p>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<!-- 5 NAMUDHAJ -->
+<section class="sec slide" id="namudhaj"><div class="wrap">
+  <div class="sec-head"><span class="sec-num">05</span><h2>نموذج تطبيقي: حصة تكوينية رقمية مصغرة</h2><p>«منظومة القيم في منهاج التربية الإسلامية»: تحليل القيمة المركزية والقيم الناظمة انطلاقاً من وضعية مهنية.</p></div>
+  <div class="model">
+    <div>
+      <div class="shot"><img src="assets/hissa.jpg" alt="لقطة من فيديو الوضعية المهنية"><span class="badge">فيديو الوضعية · 60 ثانية</span></div>
+      <div class="minis"><img src="assets/grade.jpg" alt="ورقة اختبار عليها 8/20"><img src="assets/page8.jpg" alt="الصفحة 8 من منهاج التربية الإسلامية" style="object-fit:cover;object-position:center 55%;aspect-ratio:16/9"></div>
+    </div>
+    <div>
+      <p style="margin-top:0">حصة من 30 دقيقة يقودها الأستاذ المكوّن، سندها درس «حق الله: الوفاء بالأمانة والمسؤولية» (الأولى باكالوريا، مدخل القسط)، ومرجعها الرسمي الصفحتان 8 و22 من منهاج 2016.</p>
+      <div class="steps4">
+        <div><b>01 · الوضعية المهنية</b><br>فيديو قصير وتفاعل أولي</div>
+        <div><b>02 · الخريطة الرسمية</b><br>التوحيد والقيم الناظمة الأربع</div>
+        <div><b>03 · ورشة التحليل</b><br>أحكام معللة وربط بالدرس</div>
+        <div><b>04 · التقويم الرقمي</b><br>تصحيح آلي وتقويم بشري</div>
+      </div>
+      <p class="note" style="margin:0 0 14px">توظيف الذكاء الاصطناعي: إنتاج الوضعية المصورة بأدوات توليد الفيديو والصوت، وبرمجة التطبيق التفاعلي، مع مراجعة بشرية لكل المخرجات. شخصيات الفيديو أساتذة في قاعة الأساتذة، دون أي تجسيد ممنوع.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <a class="btn teal" href="https://ouchikhlabs.github.io/basira-qiyam/" target="_blank" rel="noopener">فتح الحصة التفاعلية ↗</a>
+        <a class="btn" style="background:var(--gold-soft);color:#5c430c" href="https://ouchikhlabs.github.io/basira-qiyam/#stage-1" target="_blank" rel="noopener">مشاهدة الفيديو ↗</a>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<!-- 6 QIMA -->
+<section class="sec slide" id="qima"><div class="wrap">
+  <div class="sec-head"><span class="sec-num">06</span><h2>القيمة المضافة: ماذا سنستفيد؟</h2></div>
+  <div class="grid g2">
+    <div class="card"><div class="ic">⏱️</div><h3>حوكمة وترشيد الزمن التكويني</h3>
+      <div class="vs"><s>90 دقيقة</s><span class="arr" style="color:var(--gold);font-size:24px">←</span><span class="big">ثوانٍ</span></div>
+      <p>تحويل الساعات التطبيقية الـ 24 من زمن مستهلك في التصحيح اليدوي المطول إلى ممارسة فعلية؛ يختزل «المصفى الذكي» الفرز التقني الأولي، ليتفرغ الأستاذ المكوّن للتأطير النوعي والمقاصدي.</p></div>
+    <div class="card"><div class="ic">🌉</div><h3>التجسير بين المعرفة الشرعية والممارسة الديدكتيكية</h3><p>تدريب الطالب الأستاذ عملياً على النقل الديدكتيكي وتنزيل القيمة المركزية (التوحيد) والقيم الناظمة (الحرية، المحبة، الاستقامة، الإحسان) في وضعيات تعلمية دالة للمراهق.</p></div>
+    <div class="card"><div class="ic">🏫</div><h3>التكامل العمودي: من المركز الجهوي إلى قسم الثانوي</h3><p>أدوات ينقلها الطالب الأستاذ مباشرة إلى القسم: استمارات QR Code سريعة لرصد تمثلات التلاميذ، ووضعيات بصرية رمزية، ومهام متدرجة للفروق الفردية، وشبكات تقويم تبادلي.</p></div>
+    <div class="card"><div class="ic">🌱</div><h3>قابلية التطوير والاستدامة</h3><p>مشروع منخفض التكلفة يمثل نواة هندسية معيارية قابلة للتعميم مستقبلاً على باقي مجزوءات التكوين بالمراكز الجهوية، دون تغيير البنية الرسمية للتكوين.</p></div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <div>هندسة تكوين وحدة ديداكتيك التربية الإسلامية بتوظيف تقنيات الذكاء الاصطناعي · نموذج رقمي تفاعلي قابل للتطوير والتعميم</div>
+  <div>المرجعية: المقرر الوزاري 24-053 · منهاج التربية الإسلامية 2016</div>
+</div></footer>
+
+<div class="pbar" id="pbar">
+  <button id="pExit">✕ خروج</button>
+  <button id="pPrev">→ السابق</button>
+  <div class="dots" id="pDots"></div>
+  <button id="pNext">التالي ←</button>
+  <span class="timer" id="pTimer" title="اضغط لإيقاف/استئناف العد">10:00</span>
+</div>
+
+<script>
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+/* filter demo */
+function runFilter(){ $$('.filt').forEach(f=>{ const s=f.querySelector('.score'), v=+s.dataset.v, m=f.querySelector('.meter i'); m.style.width='0'; let c=0; setTimeout(()=>{ m.style.width=v+'%'; m.style.background = v>=70?'var(--teal2)':'var(--gold)'; },50); const it=setInterval(()=>{ c+=3; if(c>=v){c=v;clearInterval(it);} s.textContent=c+'%'; },25); }); }
+$('#runFilter').onclick=runFilter;
+const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ runFilter(); io.disconnect(); } }),{threshold:.4});
+io.observe($('#adawat'));
+/* simulator demo */
+$$('#diag button').forEach(b=>b.onclick=()=>{
+  $$('#diag button').forEach(x=>x.className=''); const ok=!!b.dataset.ok; b.className=ok?'ok':'no';
+  const fb=$('#diagFb'); fb.style.display='block';
+  fb.innerHTML = ok ? '<b>تشخيص سليم.</b> العائق تمثّل يقابل بين الحرية والتكليف. القرار الديدكتيكي: وضعية تُبرز تكامل الحرية والمسؤولية، يراجعها الأستاذ المكوّن قبل اعتمادها.' : '<b>أعد التشخيص.</b> سؤال المتعلم لا يرفض الحكم ولا يجهله؛ إنه يتوهم تعارضاً بين قيمتين.';
+});
+/* presentation mode */
+const slides=$$('.slide'); let cur=0, timer=null, left=600, running=false;
+slides.forEach((s,i)=>{ const d=document.createElement('i'); d.onclick=()=>show(i); $('#pDots').append(d); });
+function show(i){ cur=Math.max(0,Math.min(slides.length-1,i)); slides.forEach((s,k)=>s.classList.toggle('on',k===cur)); $$('#pDots i').forEach((d,k)=>d.classList.toggle('on',k===cur)); slides[cur].scrollTop=0; if(slides[cur].id==='adawat') setTimeout(runFilter,400); }
+function fmt(s){return String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0');}
+function tick(){ if(left>0) left--; $('#pTimer').textContent=fmt(left); $('#pTimer').classList.toggle('warn',left<=60); }
+function startPres(){ document.body.classList.add('present'); show(0); left=600; $('#pTimer').textContent=fmt(left); clearInterval(timer); timer=setInterval(tick,1000); running=true; try{ document.documentElement.requestFullscreen&&document.documentElement.requestFullscreen().catch(()=>{}); }catch(e){} }
+function exitPres(){ document.body.classList.remove('present'); slides.forEach(s=>s.classList.remove('on')); clearInterval(timer); running=false; try{ document.fullscreenElement&&document.exitFullscreen(); }catch(e){} }
+$('#startPres').onclick=startPres; $('#pExit').onclick=exitPres;
+$('#pNext').onclick=()=>show(cur+1); $('#pPrev').onclick=()=>show(cur-1);
+$('#pTimer').onclick=()=>{ if(running){clearInterval(timer);running=false;} else {timer=setInterval(tick,1000);running=true;} };
+document.addEventListener('keydown',e=>{ if(!document.body.classList.contains('present')) return;
+  if(['ArrowLeft','PageDown',' '].includes(e.key)){ e.preventDefault(); show(cur+1); }
+  if(['ArrowRight','PageUp'].includes(e.key)){ e.preventDefault(); show(cur-1); }
+  if(e.key==='Escape') exitPres(); });
+</script>
+</body>
+</html>
