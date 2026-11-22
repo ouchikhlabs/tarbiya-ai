@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>هندسة تكوين وحدة ديداكتيك التربية الإسلامية بتوظيف تقنيات الذكاء الاصطناعي</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Aref+Ruqaa:wght@400;700&family=Reem+Kufi:wght@500;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
   --deep:#0d3b36; --teal:#176b63; --teal2:#2f8a80; --soft:#e7f2ef; --line:#d5e4e0;
@@ -22,7 +22,7 @@ a{color:inherit}
 /* nav */
 nav.top{position:sticky;top:0;z-index:40;background:rgba(13,59,54,.96);backdrop-filter:blur(6px);color:#fff}
 nav.top .wrap{display:flex;align-items:center;gap:18px;height:62px}
-nav.top .logo{font-weight:800;font-size:16px;white-space:nowrap}
+nav.top .logo{font-family:"Reem Kufi","Tajawal";font-weight:700;font-size:17px;white-space:nowrap}
 nav.top .logo span{color:var(--gold)}
 nav.top ul{display:flex;gap:4px;list-style:none;margin:0 auto 0 0;padding:0;overflow-x:auto}
 nav.top ul a{display:block;padding:6px 12px;border-radius:999px;text-decoration:none;font-size:15px;opacity:.85;white-space:nowrap}
@@ -47,12 +47,30 @@ header.hero::after{content:"";position:absolute;inset:0;background-image:radial-
 .stat b{display:block;font-size:34px;color:var(--gold);font-family:"Tajawal";line-height:1.2}
 .stat span{font-size:15px;opacity:.85}
 
+
+/* ===== banner ===== */
+header.hero{background:linear-gradient(160deg,#0a302c 0%,#0f4a43 55%,#145a51 100%)}
+header.hero::after{background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2296%22%20height%3D%2296%22%20viewBox%3D%220%200%2096%2096%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23c9a24a%22%20stroke-width%3D%221.1%22%20opacity%3D%220.55%22%3E%3Cpath%20d%3D%22M48%2018%20L56.5%2039.5%20L78%2048%20L56.5%2056.5%20L48%2078%20L39.5%2056.5%20L18%2048%20L39.5%2039.5%20Z%22/%3E%3Cpath%20d%3D%22M27%2027%20L48%2035%20L69%2027%20L61%2048%20L69%2069%20L48%2061%20L27%2069%20L35%2048%20Z%22/%3E%3Ccircle%20cx%3D%2248%22%20cy%3D%2248%22%20r%3D%227%22/%3E%3Cpath%20d%3D%22M0%200%20L10%2010%20M96%200%20L86%2010%20M0%2096%20L10%2086%20M96%2096%20L86%2086%22/%3E%3Cpath%20d%3D%22M0%2048%20L18%2048%20M78%2048%20L96%2048%20M48%200%20L48%2018%20M48%2078%20L48%2096%22/%3E%3C/g%3E%3C/svg%3E");background-size:96px 96px;opacity:.55;mask-image:radial-gradient(ellipse at center,transparent 28%,#000 72%);-webkit-mask-image:radial-gradient(ellipse at center,transparent 28%,#000 72%)}
+header.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(900px 420px at 50% 38%,rgba(201,162,74,.16),transparent 70%);z-index:0}
+.hero .wrap{text-align:center;padding:56px 22px 60px}
+.banner{position:relative;max-width:1000px;margin:0 auto;padding:62px 56px 44px;border-radius:260px 260px 26px 26px / 140px 140px 26px 26px;background:linear-gradient(180deg,rgba(8,40,36,.82),rgba(10,52,47,.72));border:2px solid rgba(201,162,74,.75);box-shadow:0 0 0 7px rgba(10,48,44,.9),0 0 0 8.5px rgba(201,162,74,.45),0 30px 60px rgba(0,0,0,.35)}
+.banner::before{content:"";position:absolute;inset:12px;border-radius:250px 250px 18px 18px / 132px 132px 18px 18px;border:1px dashed rgba(201,162,74,.35);pointer-events:none}
+.banner .star{position:absolute;top:-30px;left:50%;transform:translateX(-50%);width:60px;height:60px}
+.banner .kicker{font-family:"Reem Kufi","Tajawal";letter-spacing:.3px;margin-top:6px}
+.banner h1.title{font-family:"Aref Ruqaa","Amiri",serif;font-weight:700;font-size:clamp(34px,5.4vw,64px);line-height:1.5;margin:8px auto 6px;max-width:900px;background:linear-gradient(180deg,#fff6dc 0%,#f1d48a 38%,#c9a24a 70%,#a77f2c 100%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 2px 0 rgba(0,0,0,.35))}
+.banner .sub{font-family:"Reem Kufi","Tajawal";font-size:clamp(17px,2.1vw,23px);color:#e9dcb4;margin:4px 0 0}
+.orn{display:block;margin:18px auto 16px;width:min(420px,80%);height:24px}
+.hero p.lead{margin:0 auto 26px}
+.hero .cta{justify-content:center}
+.hero .stats{max-width:1000px;margin:40px auto 0}
+@media (max-width:700px){.banner{padding:52px 20px 34px;border-radius:120px 120px 20px 20px/70px 70px 20px 20px} .banner::before{border-radius:110px 110px 14px 14px/62px 62px 14px 14px}}
+
 /* sections */
 section.sec{padding:76px 0;border-bottom:1px solid var(--line)}
 section.sec:nth-of-type(even){background:#fff}
 .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:28px;flex-wrap:wrap}
 .sec-num{font-family:"Tajawal";font-weight:800;color:var(--gold);font-size:18px;letter-spacing:.5px}
-.sec-head h2{font-size:clamp(26px,3.4vw,38px);color:var(--deep)}
+.sec-head h2{font-family:"Reem Kufi","Amiri",serif;font-weight:700;font-size:clamp(26px,3.4vw,38px);color:var(--deep)}
 .sec-head p{width:100%;margin:6px 0 0;color:var(--muted);font-size:18px}
 .grid{display:grid;gap:18px}
 .g2{grid-template-columns:repeat(2,1fr)} .g3{grid-template-columns:repeat(3,1fr)} .g4{grid-template-columns:repeat(4,1fr)}
@@ -163,13 +181,41 @@ body.present .stage .when b{font-size:17px}
 body.present .eval b{font-size:22px}
 body.present .eval .pill{padding:10px 14px}
 body.present .loop{margin-top:14px}
-body.present .hero .wrap{padding:60px 22px 40px}
+body.present .hero .wrap{padding:44px 22px 20px}
+body.present .hero .cta, body.present .hero p.lead{display:none}
+body.present .banner{padding:48px 40px 30px}
+body.present .hero .stats{margin-top:26px}
 @media (max-width:900px){
   .g3,.g4,.stats,.legend{grid-template-columns:repeat(2,1fr)}
   .g2,.model,.stage,.stage .card{grid-template-columns:1fr}
   nav.top ul{display:none}
 }
 @media (max-width:560px){.g3,.g4,.stats,.legend,.steps4,.minis{grid-template-columns:1fr}}
+
+@media (max-width:640px){
+  nav.top .wrap{height:56px;gap:10px}
+  nav.top .logo{white-space:normal;font-size:14px;line-height:1.35}
+  #startPres{display:none}
+  .hero .stats{grid-template-columns:repeat(2,1fr)}
+  .stat b{font-size:26px}
+  .stage .card{grid-template-columns:1fr}
+}
+
+@media (max-height:820px){
+  body.present .banner{padding:38px 30px 20px}
+  body.present .banner h1.title{font-size:40px;line-height:1.4}
+  body.present .orn{margin:8px auto 6px}
+  body.present .hero .stats{margin-top:16px;gap:10px}
+  body.present .stat{padding:8px 12px}
+  body.present .stat b{font-size:24px}
+  body.present #tatir .legend{display:none}
+  body.present .eval .pill{padding:8px 12px}
+  body.present .slide{padding:18px 0 64px}
+}
+html,body{max-width:100%;overflow-x:hidden}
+@media (min-width:1800px){html{zoom:1.15}}
+@media (min-width:2500px){html{zoom:1.6}}
+@media (min-width:3200px){html{zoom:2}}
 </style>
 </head>
 <body>
@@ -190,9 +236,14 @@ body.present .hero .wrap{padding:60px 22px 40px}
 <!-- 0 HERO -->
 <header class="hero slide" id="top">
   <div class="wrap">
-    <span class="kicker">توصيف مشروع · حقيبة تكوينية رقمية تفاعلية</span>
-    <h1>هندسة تكوين وحدة <em>ديداكتيك التربية الإسلامية</em> بتوظيف تقنيات الذكاء الاصطناعي</h1>
-    <p class="lead">نموذج رقمي تفاعلي قابل للتطوير والتعميم، يُدمج أدوات الذكاء الاصطناعي في محطات تكوينية مفصلية، دون أن يكون منصة بديلة أو بديلاً عن التكوين الحضوري.</p>
+    <div class="banner">
+      <svg class="star" viewBox="0 0 60 60" aria-hidden="true"><g fill="#0d3b36" stroke="#c9a24a" stroke-width="2"><path d="M30 3 L37 20 L56 22 L42 34 L47 53 L30 43 L13 53 L18 34 L4 22 L23 20 Z" opacity="0"/><rect x="12" y="12" width="36" height="36"/><rect x="12" y="12" width="36" height="36" transform="rotate(45 30 30)"/></g><circle cx="30" cy="30" r="7" fill="#c9a24a"/></svg>
+      <span class="kicker">توصيف مشروع · حقيبة تكوينية رقمية تفاعلية</span>
+      <h1 class="title">هندسة تكوين وحدة ديداكتيك التربية الإسلامية<br>بتوظيف تقنيات الذكاء الاصطناعي</h1>
+      <svg class="orn" viewBox="0 0 420 24" aria-hidden="true"><g stroke="#c9a24a" fill="none" stroke-width="1.5"><path d="M0 12 H160"/><path d="M260 12 H420"/><path d="M170 12 L185 4 L200 12 L185 20 Z" fill="#c9a24a" fill-opacity=".25"/><path d="M220 12 L235 4 L250 12 L235 20 Z" fill="#c9a24a" fill-opacity=".25"/><path d="M210 2 L220 12 L210 22 L200 12 Z" fill="#c9a24a"/></g></svg>
+      <p class="sub">نموذج رقمي تفاعلي قابل للتطوير والتعميم</p>
+    </div>
+    <p class="lead" style="margin-top:26px">حقيبة تكوينية تُدمج أدوات الذكاء الاصطناعي في محطات تكوينية مفصلية، دون أن تكون منصة بديلة أو بديلاً عن التكوين الحضوري.</p>
     <div class="cta">
       <a class="btn gold" href="#mahattat">أين يندرج الذكاء الاصطناعي؟</a>
       <a class="btn line" href="#namudhaj">النموذج التطبيقي</a>
@@ -391,6 +442,11 @@ document.addEventListener('keydown',e=>{ if(!document.body.classList.contains('p
   if(['ArrowLeft','PageDown',' '].includes(e.key)){ e.preventDefault(); show(cur+1); }
   if(['ArrowRight','PageUp'].includes(e.key)){ e.preventDefault(); show(cur-1); }
   if(e.key==='Escape') exitPres(); });
+
+/* swipe in presentation mode (touch screens / interactive boards) */
+let tx=null,ty=null;
+document.addEventListener('touchstart',e=>{ if(!document.body.classList.contains('present')) return; tx=e.touches[0].clientX; ty=e.touches[0].clientY; },{passive:true});
+document.addEventListener('touchend',e=>{ if(tx===null) return; const dx=e.changedTouches[0].clientX-tx, dy=e.changedTouches[0].clientY-ty; if(Math.abs(dx)>60&&Math.abs(dx)>Math.abs(dy)*1.5){ dx>0?show(cur+1):show(cur-1); } tx=null; },{passive:true});
 </script>
 </body>
 </html>
